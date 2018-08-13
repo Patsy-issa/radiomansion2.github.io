@@ -1,0 +1,159 @@
+body, html {
+  margin:0px;
+  overflow-x: hidden;
+}
+
+.container {
+  padding-left:40px;
+}
+
+
+.column-left{
+  float: left;
+  text-indent: -43px;
+  width: 33.3%;
+
+
+}
+
+.column-center{
+display: inline-block;
+
+width: 33.3%;
+text-indent: -43px;
+}
+
+.column-right{
+float:right;
+
+text-indent: -43px;
+width: 33.3%;
+}
+
+h1 {
+  font-weight: normal;
+}
+p {
+  font-family: arial;
+  margin: 30px;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+p:hover {
+    transform: rotate(5deg);
+}
+
+img:hover {
+    transform: rotate(-20deg);
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title{
+padding:0px;
+font-size:120px;
+font-family: "Arial Narrow", Arial, sans-serif;
+font-weight:normal;
+position: fixed;
+margin:0px;
+margin-left:40px;
+z-index: -1;
+}
+
+.marquee {
+  width: 100%;
+  margin:15px;
+  margin-left:0px;
+  font-family: arial;
+  font-size:18px;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+}
+
+.marquee span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 26s linear infinite;
+}
+
+.marquee2 span {
+  animation-delay: 13s;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+
+input[type="range"]{
+    -webkit-appearance: none;
+    -moz-apperance: none;
+    border-radius: 6px;
+    margin-left: 40px;
+    height: 6px;
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        color-stop(0.5, black),
+        color-stop(0.5, grey)
+    );
+}
+
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    background-color: black;
+    border: 0px;
+    height: 20px;
+    width: 20px;
+    border-radius:50%;
+}
+
+.clock {
+  font-family: arial;
+  font-size: 30px;
+  text-align:right;
+  margin-right:20px;
+}
+
+h2 {
+  font-family: arial;
+  font-size: 30px;
+  text-align:right;
+  margin-right:20px;
+  margin-top:-5px;
+  font-weight:normal;
+}
+
+.mainimage {
+margin-left:60%;
+z-index: -10;
+mix-blend-mode: multiply;
+}
+
+
+@media only screen and (max-width: 500px) {
+
+
+    .column-left{
+    width:100%;
+    }
+
+    .column-center{
+    width:100%;
+    }
+
+    .column-right{
+    width:100%;
+    }
+}
