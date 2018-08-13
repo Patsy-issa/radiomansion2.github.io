@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="main.css">
+        <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script src="jquery.fittext.js"></script>
+        <script type="text/javascript" src="sound-mouseover.js"></script>
+</head>
+
+<body>
+
+  <h1 class="marquee">
+    <span>NOW PLAYING: Rachel Dedman interviews six sound artists&emsp;UP NEXT: Points by Lara Ashkar&emsp;COMING SOON: Samar Sarkis in conversation with Maya Bissar on Deathless</span>
+  </h1>
+
+</br>
+</br>
+</br>
+
+
+
+
+<input type="range" min="0" max="240" class="slider" id="myRange">
+<div class="title">Radio Mansion
+<br>
+Now Playing: Sound Art - Rachel Dedman
+<br>
+-00:34:35
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div class="container">
+<div class="column-left">
+<div class="link">
+<p>05.00&ensp;In the sea with the fishermen - Dictaphone Group</br>A one hour tour of the shore in Beirut led by fisherman working there.This podcast is organized by Dictaphone Group in Lebanon.</p></div>
+<p>06.00&ensp;On my way to Mansion - Ziad Nawfal</br>One of six sound pieces produced during 'My Journey to the Mansion' workshop. Ziad Nawfal is a Lebanese sound artisit currently based in Mexico City.</p>
+<p>07.00&ensp;Good Morning with Kinana - Kinana Sarkis</br> Morning musings in which the Mansion resident takes us through the ways in which she translates sounds into poetry.</p>
+<img src="images/hussein.jpg" width="200px" class="center" onmouseover="playclip();">
+<p class="one">08.00&ensp;A Spirituality Program - Ghada Sakris and Nour Maher</br>Ghada Saffa and Nour Hamdan joined the Mansion Residency in 2015 and since then they've been leading Yoga classes in the spaces.</p>
+<p>09.00&ensp;Sound Art - Rachel Dedman</br>Curator and Mansion resident Rachel Dedman speaks to 3 local artists (Hussein, Mirna, and Nadim) about their recent sound work.</p>
+<p>10.00&ensp;Back and Forth - Lara Zayed</br>One of six sound pieces produced during 'My Journey to the Mansion' workshop. Lara Zayed is a Lebanese sound artisit currently based in Mexico City.</p>
+<p style="font-family:georgia;">11.00&ensp;Trauma - Samar Kanafani</br>Podcast by anthropologist and Mansion resident Samar Kanafani on trauma and the many ways in which it's manifested in the Lebanese society and public.</p>
+<p style="font-family:georgia;">12.00&ensp;What's the sound equivalent of an infographic? - Amal Nassar</br>A program with Mansion resident and infographist behind Visualizing Palestine Ahmad Barclay and the workshop he's leading in Beirut.</p>
+</div>
+
+<div class="column-center">
+<p style="font-family:georgia;">13.00&ensp;Work - Samar Atallah</br> One of six sound pieces produced during 'My Journey to the Mansion' workshop. Lara Zayed is a Lebanese sound artisit currently based in Mexico City.</p>
+<p>14.00&ensp;Program on Oral History - Farah Fayyad</br> Designer and Mansion resident Rachel Dedman speaks to 3 local artists (Hussein, Mirna, and Nadim) about their recent poetry work.</p>
+<p>15.00&ensp;Suicide Hotline - Mary Nassar</br>Podcast by anthropologist and Mansion resident Samar Kanafani on trauma and the many ways in which it's manifested in the Lebanese society and public.</p>
+<p>16.00&ensp;Audio Testimonies - Joan Baz</br>As part of her latest project, Lebanese designer and illustrator, Joan Baz takes us through an audio trip accross the Lebanese border.</p>
+<p>17.00&ensp;Sri Lankan Drama - Group A</br>Sri Lankan radio drama by a group of domestic workers working in Lebanon currently. This episode goes over their personal experiences for the past couple of years.</p>
+<img src="images/embrace.jpg" width="200px" class="center">
+<p>18.00&ensp;Pigeons of Love - Kamal Sarkis</br>An interview with a pigeon breeder led by Ibrahim Nheme along with recordings of love letters by various writers</p>
+<p>19.00&ensp;Football - Muzna Masri</br>A talk by Mansion resident Muzna Masri on the social and anthropological dimensions of football, recorded on the first day of the FIFA World Cup at the Orient Institute in Beirut</p>
+<p>20.00&ensp;Alef Sexuality Program - Maha Raad</br>As part of her latest project, Lebanese designer and illustrator, Joan Baz takes us through an audio trip accross the Lebanese border back and forth.</p>
+</div>
+
+<div class="column-right">
+<p>21.00&ensp;Queer - Samar Maher</br>A compilation of queer narratives from Beirut. Samar invited LBTGQ identifying people from Beirut to share their stories.</p>
+<p>22.00&ensp;Turn Around - Kamal Harb</br>One of six sound pieces produced during 'My Journey to the Mansion' workshop. Kamal Harb is a Lebanese sound artisit currently based in Mexico City.</p>
+<img src="images/poster.jpg" width="200px" class="center">
+<p style="font-family:georgia;">23.00&ensp;The Perfumed Garden - Raafat Majzoub</br>Layal Hammaoui reading excerpts from Raafat Majzoub's The Perfumed Garden.</p>
+<p>24.00&ensp;Bedtime stories - Ellen Amro</br>Mansion Resident will read stories about the city and memories of childhood in small neigbhorhoods.</p>
+<p>01.00&ensp;Jam Session</br>As part of her latest project, Lebanese designer and illustrator, Joan Baz takes us through an audio trip accross the Lebanese border and so on.</p>
+
+</div>
+</div>
+
+<audio>
+<source src="click.mp3">
+<source src="click.ogg">
+</audio>
+<div id="sounddiv"><bgsound id="sound"></div>
+
+
+<script>
+$('input').on('change', function () {
+    var v = $(this).val();
+    $('div').css('font-size', v + 'px')
+
+});
+
+
+$('input[type="range"]').change(function () {
+    var val = ($(this).val() - $(this).attr('min')) / ($(this).attr('max') - $(this).attr('min'));
+
+    $(this).css('background-image',
+                '-webkit-gradient(linear, left top, right top, '
+                + 'color-stop(' + val + ', black), '
+                + 'color-stop(' + val + ', grey)'
+                + ')'
+                );
+});
+
+
+
+function clock() {// We create a new Date object and assign it to a variable called "time".
+var time = new Date(),
+
+    // Access the "getHours" method on the Date object with the dot accessor.
+    hours = time.getUTCHours() +2;
+
+    // Access the "getMinutes" method with the dot accessor.
+    minutes = time.getUTCMinutes(),
+
+
+    seconds = time.getUTCSeconds();
+
+document.querySelectorAll('.clock')[0].innerHTML = harold(hours) + ":" + harold(minutes);
+
+  function harold(standIn) {
+    if (standIn < 10) {
+      standIn = '0' + standIn
+    }
+    return standIn;
+  }
+}
+setInterval(clock, 1000);
+
+
+
+
+</script>
+
+</body>
+</html>
